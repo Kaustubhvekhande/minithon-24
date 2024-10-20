@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health & Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <style>
+        :root {
+            --primary-bg: #F7EFE5; /* Light cream */
+            --secondary-bg: #E2BFD9; /* Soft pink */
+            --highlight-color: #C8A1E0; /* Purple */
+            --button-color: #674188; /* Deep purple */
+        }
+    </style>
+</head>
+<body class="bg-[var(--primary-bg)] font-sans">
+    <!-- Main Container -->
+    <div class="grid grid-cols-5 gap-4 h-screen p-4">
+        <!-- Sidebar (smaller) -->
+        <div class="col-span-1 bg-[var(--highlight-color)] p-4 flex flex-col items-center">
+            <!-- Logo -->
+            <div class="mb-6">
+                <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="h-8" />
+            </div>
+            <!-- Sidebar Menu -->
+            <nav class="space-y-4">
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md bg-[var(--button-color)] hover:bg-purple-700">Home</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">About</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">Services</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="col-span-4 p-4 space-y-4 overflow-y-auto">
+            <!-- Header Section -->
+            <header class="flex justify-between items-center bg-[var(--secondary-bg)] p-4 rounded-lg">
+                <h1 class="text-xl font-bold">Health & Wellness Tracking</h1>
+            </header>
+
+            <!-- Menstrual Tracker Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4">Menstrual Cycle Tracker</h2>
+                <p class="text-gray-600 mb-2">Track your cycle and get health tips</p>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="calendar-container">
+                        <div id='calendar'></div>
+                        <button id="addEventBtn" class="mt-5 px-4 py-2 text-white rounded bg-[var(--button-color)]">Add Cycle Event</button>
+                    </div>
+                </div>
+                <button class="bg-[var(--button-color)] text-white px-4 py-2 rounded-md hover:bg-purple-700 mt-4">Track My Cycle</button>
+            </section>
+
+            <!-- Mental Health Resources Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg mt-6">
+                <h3 class="text-md font-semibold">Mental Health Resources</h3>
+                <p class="text-gray-600 mb-2">Explore articles and resources to support your mental well-being.</p>
+                <button onclick="location.href='mental.html'" class="bg-[var(--button-color)] text-white px-4 py-2 rounded-md hover:bg-purple-700 mt-4">Access Mental Health Resources</button>
+            </section>
+
+            <!-- Fitness and Nutrition Section with Cards -->
+            <section class="bg-white p-6 rounded-lg shadow-lg mt-6">
+                <h2 class="text-lg font-semibold mb-4">Fitness & Nutrition Plans</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Fitness Tracker with Card -->
+                    <div>
+                        <h3 class="text-md font-semibold">Personalized Fitness Routine</h3>
+                        <div class="bg-white p-4 rounded-lg shadow-lg">
+                            <p class="text-gray-600">Track your workouts and get daily reminders.</p>
+                            <button class="bg-[var(--button-color)] text-white px-4 py-2 rounded-md hover:bg-purple-700 mt-4">View Fitness Plan</button>
+                        </div>
+                    </div>
+                    <!-- Nutrition Plans with Card -->
+                    <div>
+                        <h3 class="text-md font-semibold">Personalized Nutrition Plan</h3>
+                        <div class="bg-white p-4 rounded-lg shadow-lg">
+                            <p class="text-gray-600">Get meal suggestions based on your health goals.</p>
+                            <button class="bg-[var(--button-color)] text-white px-4 py-2 rounded-md hover:bg-purple-700 mt-4">View Nutrition Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Sample events array
+        let events = [
+            { title: 'Menstrual Cycle', start: '2024-10-01', end: '2024-10-05' },
+            { title: 'Ovulation', start: '2024-10-15', end: '2024-10-17' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: events,
+                dateClick: function(info) {
+                    alert('Clicked on: ' + info.dateStr);
+                }
+            });
+
+            calendar.render();
+
+            // Function to add a new event
+            document.getElementById('addEventBtn').addEventListener('click', function() {
+                const newEvent = {
+                    title: 'New Cycle Event',
+                    start: '2024-10-10',
+                    end: '2024-10-12',
+                    color: 'purple'
+                };
+                calendar.addEvent(newEvent);
+                events.push(newEvent); // Update events array
+            });
+        });
+    </script>
+</body>
+</html>
