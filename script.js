@@ -1,35 +1,85 @@
-document.getElementById('trackLocation').addEventListener('click', function() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        document.getElementById('locationOutput').innerText = "Geolocation is not supported by this browser.";
-    }
+
+
+
+
+// Polar Area Chart
+const polarCtx = document
+    .getElementById("polarAreaChart")
+    .getContext("2d");
+const polarAreaChart = new Chart(polarCtx, {
+    type: "polarArea",
+    data: {
+        labels: [
+            "Temprature",
+            "sleep",
+            "Heartrate",
+            "Health",
+        ],
+        datasets: [
+            {
+                label: "My Polar Area Data",
+                data: [37, 56, 70, 90],
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.6)",
+                    "rgba(54, 162, 235, 0.6)",
+                    "rgba(255, 206, 86, 0.6)",
+                    "rgba(75, 192, 192, 0.6)",
+
+                ],
+            },
+        ],
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: "top",
+            },
+            title: {
+                display: true,
+                text: "Polar Area Chart Example",
+            },
+        },
+    },
 });
 
-function showPosition(position) {
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-    const mapUrl = `https://www.google.com/maps?q=${lat},${lon}`;
-    
-    document.getElementById('locationOutput').innerHTML = `
-        Latitude: ${lat} <br> Longitude: ${lon} <br>
-        <a href="${mapUrl}" target="_blank">View on Map</a>
-    `;
-}
-
-function showError(error) {
-    switch (error.code) {
-        case error.PERMISSION_DENIED:
-            document.getElementById('locationOutput').innerText = "User denied the request for Geolocation.";
-            break;
-        case error.POSITION_UNAVAILABLE:
-            document.getElementById('locationOutput').innerText = "Location information is unavailable.";
-            break;
-        case error.TIMEOUT:
-            document.getElementById('locationOutput').innerText = "The request to get user location timed out.";
-            break;
-        case error.UNKNOWN_ERROR:
-            document.getElementById('locationOutput').innerText = "An unknown error occurred.";
-            break;
-    }
-}
+// Line Chart
+const lineCtx = document
+    .getElementById("lineChart")
+    .getContext("2d");
+const lineChart = new Chart(lineCtx, {
+    type: "line",
+    data: {
+        labels: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+        ],
+        datasets: [
+            {
+                label: "My First Dataset",
+                data: [65, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+            },
+        ],
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: "top",
+            },
+            title: {
+                display: true,
+                text: "Line Chart Example",
+            },
+        },
+    },
+});

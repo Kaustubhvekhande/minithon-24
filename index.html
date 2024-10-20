@@ -1,87 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empowering Women</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menstrual_health" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menstrual_health" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Style for the canvas to make it responsive and consistent */
+        canvas {
+            max-width: 400px;
+            height: 300px;
+            /* Set a fixed height */
+            margin: 20px auto;
+        }
+    </style>
+
 </head>
-<body class="primary-bg font-sans">
-    <!-- Main Container -->
-    <div class="main-grid-container">
+
+<body class="bg-[#F7EFE5] font-sans">
+    <div class="grid grid-cols-[1fr_3.2fr_0.7fr] gap-4 h-screen p-4">
         <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Logo -->
-            <div class="logo-container">
-                <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="logo" />
+        <div class="bg-[#C8A1E0] p-4 flex flex-col items-center rounded-lg">
+            <div class="mb-10">
+                <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="h-12" />
             </div>
-            <!-- Sidebar Menu -->
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Services</a>
-                <a href="#" class="nav-link">Contact</a>
+            <nav class="flex flex-col gap-6">
+                <a href="#"
+                    class="text-white bg-[#674188] py-2 px-4 rounded transition duration-300 hover:bg-[#5c2980]">Home</a>
+                <a href="#" class="text-white py-2 px-4 rounded transition duration-300 hover:bg-[#5c2980]">About</a>
+                <a href="#" class="text-white py-2 px-4 rounded transition duration-300 hover:bg-[#5c2980]">Services</a>
+                <a href="#" class="text-white py-2 px-4 rounded transition duration-300 hover:bg-[#5c2980]">Contact</a>
             </nav>
         </div>
 
         <!-- Main Content Area -->
-        <div class="main-content">
+        <div class="p-4">
             <!-- Header Section -->
-            <header class="header-section">
-                <h1>Welcome to Your Safety and Wellness Hub</h1>
-                <!-- Profile Section -->
-                <div class="profile-section">
-                    <div class="username">Username</div>
-                    <button class="logout-btn">Log Out</button>
+            <header class="flex justify-between items-center bg-[#E2BFD9] p-4 rounded-lg mb-4">
+                <h1 class="text-lg font-bold">
+                    Welcome to Your Safety and Wellness Hub
+                </h1>
+                <div class="flex items-center gap-4">
+                    <div class="text-gray-700">Username</div>
+                    <button
+                        class="bg-[#674188] text-white py-2 px-4 rounded transition duration-300 hover:bg-[#5c2980]">
+                        Log Out
+                    </button>
                 </div>
             </header>
 
             <!-- Tracking Section -->
-            <section class="tracking-section">
-                <!-- Tracking Widget -->
-                <div class="tracking-widget">
-                    <h2>Real-Time Tracking</h2>
-                    <p>Track your location and share it with trusted contacts.</p>
-                    <button class="track-location-btn">Track My Location</button>
-                    <div id="locationOutput" class="location-output"></div>
-                </div>
-            </section> 
-                <!-- Heartbeat / Health Monitor Widget
-                <div class="heartbeat-widget">
-                    <div class="heartbeat-content">
-                        <img src="https://icon-library.com/images/heartbeat-icon/heartbeat-icon-7.jpg" class="heartbeat-icon" alt="Heart Icon" />
-                        <p>Heartbeat Monitor</p>
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-white shadow-lg p-6 rounded-lg flex flex-col col-span-2">
+                    <h2 class="text-lg font-semibold mb-2">
+                        Real-Time Tracking
+                    </h2>
+                    <div id="locationOutput" class="mb-4"></div>
+
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-md font-semibold mb-2">
+                                Health areas Chart
+                            </h3>
+                            <canvas id="polarAreaChart"></canvas>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-md font-semibold mb-2">
+                                Line Chart
+                            </h3>
+                            <canvas id="lineChart"></canvas>
+                        </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
 
             <!-- Bottom Section -->
-            <section class="bottom-section">
-                <div class="card">
-                    <div class="flex-grow flex ">
-                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Shooting Stars</h2>
-                        <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-                        <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                          </svg>
-                        </a>
-                        <img src="" alt="">
-                      </div>
-                  </div>
-                <div class="feature-box flex">
-                    <img src="" alt="">
-                    <p>Health & Wellness</p>
+            <section class="flex flex-col gap-4 mb-4">
+                <div class="bg-white rounded-lg shadow-lg p-6 flex items-center">
+                    <img src="./dashboard icons/1.png" class="h-[250px] w-[250px] object-cover"
+                        alt="Real-Time Tracking" />
+                    <div class="flex flex-col ml-6">
+                        <h3 class="font-bold text-2xl">Real-Time Tracking and Safe Routes</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Stay connected: Track your location in real-time and share with trusted contacts.</li>
+                            <li>Safety first: Identify and follow verified safe routes in your area.</li>
+                            <li>Instant alerts: Get notified about potential risks and take preventive actions.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature-box flex">
-                    <p>Community Support</p>
-                    <img src="" alt="">
+                <div class="bg-white rounded-lg shadow-lg p-6 flex items-center">
+                    <div class="flex flex-col ml-6">
+                        <h3 class="font-bold text-2xl">Health and Mental Wellness Tracking</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Track your well-being: Monitor mental and physical health indicators.</li>
+                            <li>Personalized insights: Receive recommendations based on your wellness data.</li>
+                            <li>Mind and body balance: Focus on holistic wellness to improve daily life.</li>
+                        </ul>
+                    </div>
+                    <img src="./dashboard icons/2.png" class="h-[250px] w-[250px] object-cover"
+                        alt="Health and Mental Wellness Tracking" />
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex items-center">
+                    <img src="./dashboard icons/3.png" class="h-[250px] w-[250px] object-cover"
+                        alt="Fitness and Nutrition Plans" />
+                    <div class="flex flex-col ml-6">
+                        <h3 class="font-bold text-2xl">Fitness and Nutrition Plans</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Customized plans: Tailored fitness routines and nutrition guides just for you.</li>
+                            <li>Achieve your goals: Track your progress and stay motivated with personalized insights.
+                            </li>
+                            <li>Expert advice: Access curated content from certified fitness trainers and nutritionists.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex items-center">
+                    <div class="flex flex-col ml-6">
+                        <h3 class="font-bold text-2xl">Community Support and Safe Spaces</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Find your tribe: Connect with a community of like-minded women for advice and support.
+                            </li>
+                            <li>Safe zones: Discover nearby safe spaces to relax, network, or seek assistance.</li>
+                            <li>Empowerment through unity: Share experiences, resources, and encouragement with your
+                                community.</li>
+                        </ul>
+                    </div>
+                    <img src="./dashboard icons/4.png" class="h-[250px] w-[250px] object-cover"
+                        alt="Community Support and Safe Spaces" />
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex items-center">
+                    <img src="./dashboard icons/5.png" class="h-[250px] w-[250px] object-cover"
+                        alt="Legal Assistance and Resources" />
+                    <div class="flex flex-col ml-6">
+                        <h3 class="font-bold text-2xl">Legal Assistance and Resources</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Know your rights: Access information on legal protections and women’s rights.</li>
+                            <li>Expert guidance: Get connected to legal professionals for advice and support.</li>
+                            <li>Resources on demand: Easily find legal documents and services that can help in critical
+                                situations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex items-center">
+                    <div class="flex flex-col ml-6">
+                        <h3 class="font-bold text-2xl">Job and Career Support</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Career empowerment: Access job boards, skill-building resources, and mentorship
+                                opportunities.</li>
+                            <li>Skill development: Find training programs to advance your career.</li>
+                            <li>Professional support: Connect with experts for guidance on resumes, interviews, and
+                                career growth.</li>
+                        </ul>
+                    </div>
+                    <img src="./dashboard icons/6.png" class="h-[250px] w-[250px] object-cover"
+                        alt="Job and Career Support" />
                 </div>
             </section>
+
+
         </div>
+        <div class="flex flex-col items-center">
+            <button class="h-12 w-32 text-white bg-red-600 rounded-full mx-4 my-8 p-2" onclick="alert('SOS Alert Triggered!')">
+                <p class="text-aliceblue">SOS</p>
+            </button>
+            <div class="bg-[#E2BFD9] rounded-lg shadow-lg p-5 w-72 mx-auto">
+                <div class="contact-list flex items-center">
+                    <ul class="list-none p-0">
+                        <li class="my-2 text-lg text-center"><u>Mummy</u></li>
+                        <li class="my-2 text-lg text-center"><u>Dad</u></li>
+                        <li class="my-2 text-lg text-center"><u>Sister</u></li>
+                        <li class="my-2 text-lg text-center"><u>Uncle</u></li>
+                        <li class="my-2 text-lg text-center"><u>Friend</u></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

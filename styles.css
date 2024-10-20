@@ -216,3 +216,38 @@ body {
 .feature-box p {
     color: #717171;
 }
+
+
+.sos{
+    height:50px;
+    width: 120px;
+    
+    background-color: rgb(207, 42, 42);
+    border-radius: 60px;
+    margin: 30px;
+    margin-left: 100px;
+    padding: 10px;
+}
+
+.card2 {
+    background-color:#E2BFD9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 5px auto;
+    font-family: Arial, sans-serif;
+    
+}
+
+.contact-list ul {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.contact-list li {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: center;
+}
