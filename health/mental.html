@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-bg: #F7EFE5; /* Light cream */
+            --secondary-bg: #E2BFD9; /* Soft pink */
+            --highlight-color: #C8A1E0; /* Purple */
+            --button-color: #674188; /* Deep purple */
+        }
+    </style>
+</head>
+<body class="bg-[var(--primary-bg)] font-sans">
+    <!-- Main Container -->
+    <div class="grid grid-cols-5 gap-4 h-screen p-4">
+        <!-- Sidebar (smaller) -->
+        <div class="col-span-1 bg-[var(--highlight-color)] p-4 flex flex-col items-center">
+            <!-- Logo -->
+            <div class="mb-6">
+                <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="h-8" />
+            </div>
+            <!-- Sidebar Menu -->
+            <nav class="space-y-4">
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">Home</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md bg-[var(--button-color)] hover:bg-purple-700">Mental Health</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">About</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">Services</a>
+                <a href="#" class="block text-white py-1 px-3 text-sm rounded-md hover:bg-purple-700">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="col-span-4 p-4 space-y-4 overflow-y-auto">
+            <!-- Header Section -->
+            <header class="flex justify-between items-center bg-[var(--secondary-bg)] p-4 rounded-lg">
+                <h1 class="text-xl font-bold">Mental Health Resources</h1>
+                <button type="button"  class="text-white bg-purple-400 hover:bg-purple-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="meditation.html">Guided Meditation</a></button>
+            </header>
+            
+            <!-- Introduction Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg mb-6">
+                <h2 class="text-lg font-semibold mb-4">Understanding Mental Health</h2>
+                <p class="text-gray-600 mb-2">
+                    Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices.
+                </p>
+                <p class="text-gray-600 mb-2">
+                    Mental health is important at every stage of life, from childhood and adolescence through adulthood. Good mental health is more than just the absence of mental illness. It means you are in a state of well-being in which you feel good and function well in the world.
+                </p>
+                <p class="text-gray-600 mb-2">
+                    There are many factors that can affect mental health, including genetics, brain chemistry, trauma, and life experiences. Taking care of your mental health is just as important as taking care of your physical health.
+                </p>
+            </section>
+
+            <!-- Articles Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-semibold mb-4">Articles on Mental Health</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Article 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="../assets/mindfullness_img.jpg" alt="Mindfulness" class="w-full h-35 object-cover" />
+                        <div class="p-4">
+                            <h3 class="font-semibold">Mindfulness for Mental Health</h3>
+                            <p class="text-gray-600 mb-2">Explore the practice of mindfulness and how it can help improve your mental well-being.</p>
+                            <a href="#" class="text-[var(--button-color)] hover:underline">Read more</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="../assets/deppresion_img.jpg" alt="Depression" class="w-full h-35 object-cover" />
+                        <div class="p-4">
+                            <h3 class="font-semibold">Understanding Depression</h3>
+                            <p class="text-gray-600 mb-2">Learn about the symptoms of depression and how to seek help.</p>
+                            <a href="#" class="text-[var(--button-color)] hover:underline">Read more</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="../assets/anxiety-1.jpg" alt="Anxiety" class="w-full h-35 object-cover" />
+                        <div class="p-4">
+                            <h3 class="font-semibold">Managing Anxiety</h3>
+                            <p class="text-gray-600 mb-2">Tips and techniques for managing anxiety in your daily life.</p>
+                            <a href="#" class="text-[var(--button-color)] hover:underline">Read more</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="../assets/selfcare.jpg" alt="Self Care" class="w-full h-35 object-cover" />
+                        <div class="p-4">
+                            <h3 class="font-semibold">The Importance of Self-Care</h3>
+                            <p class="text-gray-600 mb-2">Discover the impact of self-care on mental health and well-being.</p>
+                            <a href="#" class="text-[var(--button-color)] hover:underline">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
